@@ -17,7 +17,6 @@ export class DataService {
         'Authorization': 'Basic ' + btoa(userName + ':' + password)
       }
     });
-      // .map(result => result);
   }
 
 }

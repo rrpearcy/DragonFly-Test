@@ -27,9 +27,9 @@ export class AppComponent implements OnInit {
 
     getAllEvents() {
       this._data.getAllEvents(this.userName, this.password)
-        .subscribe(res => {
-            this.events = res;
-            console.log(res);
+        .subscribe(data => {
+            this.events = data;
+            console.log(data);
             console.log('JSON loaded!!');
           },
           error => {
