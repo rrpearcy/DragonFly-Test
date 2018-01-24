@@ -9,7 +9,7 @@ export class DataService {
 
   constructor(private _http: HttpClient) { }
 
-  getEvents() {
+  getAllEvents() {
     return this._http.get(this._url, {
       headers: {
         'Authorization': 'Basic ' + btoa("rpearcy" + ":" + "evalpass")

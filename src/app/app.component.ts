@@ -17,14 +17,18 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this._data.getEvents()
-      .subscribe(res => {
-        this.eventName = res;
-        console.log(res);
-        console.log('JSON loaded!!');
-      },
-      error => {
-        alert('ERROR!!');
-      });
+    this.getAllEvents();
+      }
+
+    getAllEvents() {
+      this._data.getAllEvents()
+        .subscribe(res => {
+            this.eventName = res;
+            console.log(res);
+            console.log('JSON loaded!!');
+          },
+          error => {
+            alert('ERROR!!');
+    });
   }
 }
