@@ -8,9 +8,9 @@ import {Data} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  eventId: any;
+
   eventName: any;
-  eventDescription: any;
+  // eventId: any;
 
   constructor(private _data: DataService) {
 
@@ -20,7 +20,11 @@ export class AppComponent {
     this._data.getEvents()
       .subscribe(res => {
         this.eventName = res;
+        console.log('JSON loaded!!');
         console.log(res);
+      },
+      error => {
+        alert('ERROR!!');
       });
   }
 }
