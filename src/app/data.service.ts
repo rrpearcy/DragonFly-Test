@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { event } from './events';
+import { events } from './events';
 
 @Injectable()
 export class DataService {
@@ -11,11 +11,10 @@ export class DataService {
 
   constructor(private _http: HttpClient) { }
 
-  getAllEvents(userName: string, password: string): Observable<event[]> {
-    return this._http.get<event[]>(this._url, {
+  getAllEvents(userName: string, password: string): Observable<events[]> {
+    return this._http.get<events[]>(this._url, {
       headers: {
         'Authorization': 'Basic ' + btoa(userName + ':' + password)
-        // TODO: Would like to get the username and password from a login component but hard coded from app component for now
       }
     });
       // .map(result => result);

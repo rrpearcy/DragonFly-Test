@@ -14,6 +14,7 @@ export class AppComponent {
   eventName: any;
   userName: string ='rpearcy';
   password: string ='evalpass';
+  // TODO: Create Login Component to pull the userName and password from user input
   events: events[];
 
   constructor(private _data: DataService) {
