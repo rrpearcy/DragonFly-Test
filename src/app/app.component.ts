@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { DataService } from './data.service';
@@ -9,9 +9,9 @@ import { events } from './events';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  eventName: any;
+  // eventName: any;
   userName: string ='rpearcy';
   password: string ='evalpass';
   // TODO: Create Login Component to pull the userName and password from user input
@@ -28,7 +28,7 @@ export class AppComponent {
     getAllEvents() {
       this._data.getAllEvents(this.userName, this.password)
         .subscribe(res => {
-            this.events = res;
+            this.events = res['events'];
             console.log(res);
             console.log('JSON loaded!!');
           },
