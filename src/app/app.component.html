@@ -9,8 +9,8 @@
 </mat-toolbar>
 
 <mat-card>
-  <div *ngIf="eventName">
-    <div id="event-container" *ngFor="let event of eventName">
+  <div *ngIf="events">
+    <div id="event-container" *ngFor="let event of events">
       <br>
       <span class="left event-title">{{event.name}}</span>
       <br>

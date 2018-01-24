@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
 import { DataService } from './data.service';
-import {Data} from '@angular/router';
+import { events } from './events';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,9 @@ import {Data} from '@angular/router';
 export class AppComponent {
 
   eventName: any;
-  // eventId: any;
+  userName: string ='rpearcy';
+  password: string ='evalpass';
+  events: events[];
 
   constructor(private _data: DataService) {
 
@@ -21,9 +25,9 @@ export class AppComponent {
       }
 
     getAllEvents() {
-      this._data.getAllEvents()
+      this._data.getAllEvents(this.userName, this.password)
         .subscribe(res => {
-            this.eventName = res;
+            this.events = res;
             console.log(res);
             console.log('JSON loaded!!');
           },
