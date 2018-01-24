@@ -13,6 +13,7 @@ export class DataService {
     return this._http.get(this._url, {
       headers: {
         'Authorization': 'Basic ' + btoa("rpearcy" + ":" + "evalpass")
+        // TODO: Would like to get the username and password from a login component but hard coded for now
       }
     })
       .map(result => result);

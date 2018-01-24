@@ -20,8 +20,8 @@ export class AppComponent {
     this._data.getEvents()
       .subscribe(res => {
         this.eventName = res;
-        console.log('JSON loaded!!');
         console.log(res);
+        console.log('JSON loaded!!');
       },
       error => {
         alert('ERROR!!');
