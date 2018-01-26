@@ -40,7 +40,6 @@ export class AppComponent implements OnInit {
               //       this.events[i].image = image;
               //     });
               // }
-              // GET this.events[i].url + /media/ + this.events[i].images[0].id
             }
           },
           (err: HttpErrorResponse) => {
